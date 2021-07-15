@@ -7,6 +7,7 @@
 var chromeSerialExtensionId = 'hgfifalikalcfmbphbkgdhbfollppfcn';
 
 chrome.runtime.sendMessage(chromeSerialExtensionId, {info: "TEST"}, function(response) {
+    //
     console.log(response)
 });
 
