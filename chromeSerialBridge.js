@@ -10,9 +10,6 @@ chrome.runtime.sendMessage(chromeSerialExtensionId, {info: "TEST"}, function(res
     console.log(response)
 });
 
-console.log("TODO 'chromeSerial.js'");
-
-
 /*
 if ("serial" in navigator) {
     console.log("serial")
