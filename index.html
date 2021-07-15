@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Chrome Serial Bridge</title>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        
+        <script src="chromeSerial.js" defer></script>
+    </head>
+    <body>
+            <!--
+            <div class="btn-group">
+                <button class="btn-mcu" id="test-mcu-button"">
+                    <i class="fa fa-usb" aria-hidden="true"></i>
+                    <span class="toolbar-btn-label">Test</span>
+                </button>
+            </div>
+            -->
+            <!--
+            <script>
+                document.getElementById("test-mcu-button").addEventListener("click", () => {
+                    window.postMessage({ type: "WALT3_CLIENT", text: "Hello from the webpage!" }, "*");
+                }, false);
+                                                                                                  
+                window.addEventListener("message", function (event) {
+                    if (event.source != window)
+                        return;
+                                                 
+                    var message = event.data;
+                    if (typeof message !== "object" || message === null || !!message.type && message.type !== "WALT3_GATEWAY") {
+                        return;
+                    }
+                          
+                    wal3ExtensionId = message.text
+                    console.log("Web Page Event Data Text: " + wal3ExtensionId);
+                                                                                                              
+                    chrome.runtime.sendMessage(wal3ExtensionId, {info: "TEST"}, function(response) {
+                        console.log(response)
+                    });
+                                                                                     
+                }, false);
+            </script>                                                                 
+            -->
+    </body>
+</html>
