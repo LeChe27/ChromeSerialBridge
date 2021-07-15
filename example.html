@@ -8,7 +8,7 @@
     <title>Chrome Serial Bridge Example</title>
 
     <script>
-        isExtensionInstalled(
+        document.getElementById('ChromeSerialBridgeFrame').contentWindow.isExtensionInstalled(
             function (installed) {
                 if (!installed) {
                     alert("Serial Port Interface extension is missing. Please install");
