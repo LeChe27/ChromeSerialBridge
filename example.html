@@ -8,13 +8,19 @@
     <title>Chrome Serial Bridge Example</title>
 
     <script>
-        document.getElementById('ChromeSerialBridgeFrame').contentWindow.isExtensionInstalled(
-            function (installed) {
-                if (!installed) {
-                    alert("Serial Port Interface extension is missing. Please install");
+        function afterLoaded() {
+            document.getElementById('ChromeSerialBridgeFrame').contentWindow.isExtensionInstalled(
+                function (installed) {
+                    if (!installed) {
+                        alert("Serial Port Interface extension is missing. Please install");
+                    }
+                    console.log('installed')
                 }
-            }
-        );
+            );
+        }
+        window.addEventListener("load", afterLoaded, false);
+
+
     </script>
 </head>
 
