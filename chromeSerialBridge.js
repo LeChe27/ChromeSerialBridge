@@ -20,11 +20,12 @@ chrome.runtime.sendMessage(chromeSerialExtensionId, { info: "TEST" }, function (
 function isExtensionInstalled(callback) {
     chrome.runtime.sendMessage(chromeSerialExtensionId, { cmd: "installed" },
         function (response) {
-            if (response) {
+            callback(response);
+            /*if (response) {
                 callback(true);
             } else {
                 callback(false);
-            }
+            }*/
         }
     );
 }
