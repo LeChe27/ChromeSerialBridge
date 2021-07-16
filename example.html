@@ -15,9 +15,11 @@
         var serialBridge = null;
 
         function checkSerialBridgePortIsConnect() {
-            serialBridge.isPortConnect(function(response) {
-                console.debug("TODO: isPortConnect()", response)
-            });
+            serialBridge.isPortConnect(
+                function(response) {
+                    console.debug("TODO: isPortConnect()", response)
+                }
+            );
         }
 
         function afterLoaded() {
