@@ -9,8 +9,11 @@ var chromeSerialExtensionId = 'hgfifalikalcfmbphbkgdhbfollppfcn';
 
 function SerialBridge() {
     this.isPortConnect = function (callBack) {
-        // TODO
-        callBack(true);
+        chrome.runtime.sendMessage(chromeSerialExtensionId, { cmd: "connected" },
+            function (response) {
+                callback(response);
+            }
+        );
     }
 }
 
