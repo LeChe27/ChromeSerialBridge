@@ -7,8 +7,8 @@
 var chromeSerialExtensionId = 'hgfifalikalcfmbphbkgdhbfollppfcn';
 
 
-function SerialPort() {
-    this.isSerialPortOpen = function (callBack) {
+function SerialBridge() {
+    this.isPortConnect = function (callBack) {
         // TODO
         callBack(true);;
     }

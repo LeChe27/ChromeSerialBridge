@@ -17,8 +17,10 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
     <script>
-        function checkSerialPortIsOpen() {
-            alert("TODO: isSerialPortOpen()")
+        var serialBridge = null;
+
+        function checkSerialBridgePortIsConnect() {
+            alert("TODO: isPortConnect()")
         }
 
         function afterLoaded() {
@@ -34,6 +36,7 @@
                         }
                         else {
                             SerialBridgeExtensionInstalled = true
+                            serialBridge = new SerialBridge;
                         }
                     }
                 );
@@ -48,7 +51,7 @@
 </head>
 
 <body>
-    <button id="checkserialport" onclick="checkSerialPortIsOpen()">Check Serial port is open</button>
+    <button id="checkserialport" onclick="checkSerialBridgePortIsConnect()">Check Serial Bridge port is connected</button>
 </body>
 
 </html>
