@@ -11,7 +11,7 @@
         function afterLoaded() {
             document.getElementById('ChromeSerialBridgeFrame').contentWindow.isExtensionInstalled(
                 function (installed) {
-                    if (!installed) {
+                    if (installed.result === 'KO') {
                         alert("Serial Port Interface extension is missing. Please install");
                     }
                     console.log('Serial Port Interface extension installed', installed)

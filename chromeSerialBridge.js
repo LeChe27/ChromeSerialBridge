@@ -6,13 +6,6 @@
 */
 var chromeSerialExtensionId = 'hgfifalikalcfmbphbkgdhbfollppfcn';
 
-/*
-chrome.runtime.sendMessage(chromeSerialExtensionId, { info: "TEST" }, function (response) {
-    //
-    console.log(response)
-});
-* /
-
 /**
 * Used to check if the Serial Interface app is installed on the browser.
 * If it's installed return result: "ok" and the current version
@@ -20,23 +13,11 @@ chrome.runtime.sendMessage(chromeSerialExtensionId, { info: "TEST" }, function (
 function isExtensionInstalled(callback) {
     chrome.runtime.sendMessage(chromeSerialExtensionId, { cmd: "installed" },
         function (response) {
-            callback(response);
-            /*if (response) {
-                callback(true);
+            if (response) {
+                callback(response);
             } else {
-                callback(false);
-            }*/
+                callback('{result: "KO", version: 0.0}');
+            }
         }
     );
 }
-
-/*
-if ("serial" in navigator) {
-    console.log("serial")
-    // The Web Serial API is supported.
-    //const ports = await navigator.serial.getPorts();
-    navigator.serial.getPorts(function(devices) {
-        console.log(devices);
-    });
-}
-*/
