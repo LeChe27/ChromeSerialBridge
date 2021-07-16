@@ -7,8 +7,22 @@
     <meta name="viewport' content='width=device-width, initial-scale=1">
     <title>Chrome Serial Bridge Example</title>
 
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
     <script>
+        function checkSerialPortIsOpen() {
+            alert("TODO: isSerialPortOpen()")
+        }
+
         function afterLoaded() {
+            SerialBridgeExtensionInstalled = false
             if (document.getElementById('ChromeSerialBridgeFrame') === null) {
                 alert("Serial Bridge interface extension is missing. Please install.");
             }
@@ -16,10 +30,17 @@
                 document.getElementById('ChromeSerialBridgeFrame').contentWindow.isSerialBridgeExtensionInstalled(
                     function (installed) {
                         if (installed.result === 'ERR') {
-                            alert("No communication with the Serial Bridge interface extension ");
+                            alert("No communication with the Serial Bridge interface extension.");
+                        }
+                        else {
+                            SerialBridgeExtensionInstalled = true
                         }
                     }
                 );
+            }
+
+            if (!SerialBridgeExtensionInstalled) {
+                document.getElementById("checkserialport").disabled = true;
             }
         }
         window.addEventListener("load", afterLoaded, false);
@@ -27,6 +48,7 @@
 </head>
 
 <body>
+    <button id="checkserialport" onclick="checkSerialPortIsOpen()">Check Serial port is open</button>
 </body>
 
 </html>

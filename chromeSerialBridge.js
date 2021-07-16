@@ -8,6 +8,10 @@ var chromeSerialExtensionId = 'hgfifalikalcfmbphbkgdhbfollppfcn';
 
 
 function SerialPort() {
+    this.isSerialPortOpen = function (callBack) {
+        // TODO
+        callBack(true);;
+    }
 }
 
 /**
