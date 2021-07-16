@@ -16,7 +16,7 @@ function isExtensionInstalled(callback) {
             if (response) {
                 callback(response);
             } else {
-                callback('{result: "KO", version: 0.0}');
+                callback('{result: "KO", version: "0.0"}');
             }
         }
     );
