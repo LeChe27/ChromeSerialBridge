@@ -6,6 +6,10 @@
 */
 var chromeSerialExtensionId = 'hgfifalikalcfmbphbkgdhbfollppfcn';
 
+
+function SerialPort() {
+}
+
 /**
 * Used to check if the Serial Interface app is installed on the browser.
 * If it's installed return result: "ok" and the current version
@@ -16,7 +20,7 @@ function isExtensionInstalled(callback) {
             if (response) {
                 callback(response);
             } else {
-                callback('{result: "KO", version: "0.0"}');
+                callback('{result: "ERR", version: "0.0"}');
             }
         }
     );

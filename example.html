@@ -9,14 +9,19 @@
 
     <script>
         function afterLoaded() {
-            document.getElementById('ChromeSerialBridgeFrame').contentWindow.isExtensionInstalled(
-                function (installed) {
-                    if (installed.result === 'KO') {
-                        alert("Serial Port Interface extension is missing. Please install");
+            if (document.getElementById('ChromeSerialBridgeFrame') === null) {
+                alert("Serial Bridge interface extension is missing. Please install.");
+            }
+            else {
+                document.getElementById('ChromeSerialBridgeFrame').contentWindow.isExtensionInstalled(
+                    function (installed) {
+                        if (installed.result === 'ERR') {
+                            alert("No communication with the Serial Bridge interface extension ");
+                        }
+                        console.log('Serial Port Interface extension installed', installed)
                     }
-                    console.log('Serial Port Interface extension installed', installed)
-                }
-            );
+                );
+            }
         }
         window.addEventListener("load", afterLoaded, false);
     </script>
