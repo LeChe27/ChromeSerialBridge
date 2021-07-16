@@ -13,12 +13,11 @@
                 alert("Serial Bridge interface extension is missing. Please install.");
             }
             else {
-                document.getElementById('ChromeSerialBridgeFrame').contentWindow.isExtensionInstalled(
+                document.getElementById('ChromeSerialBridgeFrame').contentWindow.isSerialBridgeExtensionInstalled(
                     function (installed) {
                         if (installed.result === 'ERR') {
                             alert("No communication with the Serial Bridge interface extension ");
                         }
-                        console.log('Serial Port Interface extension installed', installed)
                     }
                 );
             }

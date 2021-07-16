@@ -11,10 +11,10 @@ function SerialPort() {
 }
 
 /**
-* Used to check if the Serial Interface app is installed on the browser.
-* If it's installed return result: "ok" and the current version
+* Used to check if the Serial Bridge extension is installed on the browser.
+* If it's installed return result: "OK" and the current version.
 */
-function isExtensionInstalled(callback) {
+function isSerialBridgeExtensionInstalled(callback) {
     chrome.runtime.sendMessage(chromeSerialExtensionId, { cmd: "installed" },
         function (response) {
             if (response) {
