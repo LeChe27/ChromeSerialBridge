@@ -12,13 +12,18 @@
     -->
 
     <script>
-        var serialBridge = null;
-
-
-        navigator.serial.addEventListener('connect', e => {
-            // Add |e.port| to the UI or automatically connect.
-            console.log('navigator.serial connect', e.port)
+        connectButton.addEventListener('click', async () => {
+        try {
+            const port = await navigator.serial.requestPort();
+            console.log(port)
+        } catch (e) {
+            console.error(e)
+        }
         });
+
+
+
+        var serialBridge = null;
 
         async function checkSerialBridgePortIsConnect() {
             try {
@@ -66,6 +71,8 @@
 <body>
     <br>
     <button id="checkserialport" onclick="checkSerialBridgePortIsConnect()" disabled>Check Serial Bridge port is connected</button>
+    <br>
+    <button id="connect">Connect</button>
 </body>
 
 </html>
