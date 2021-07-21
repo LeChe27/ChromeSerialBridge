@@ -14,6 +14,12 @@
     <script>
         var serialBridge = null;
 
+
+        navigator.serial.addEventListener('connect', e => {
+            // Add |e.port| to the UI or automatically connect.
+            console.log('navigator.serial connect', e.port)
+        });
+
         async function checkSerialBridgePortIsConnect() {
             try {
                 //const port = await navigator.serial.requestPort();
