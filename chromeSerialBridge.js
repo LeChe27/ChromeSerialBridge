@@ -21,15 +21,6 @@ function SerialBridge() {
 * If it's installed return result: "OK" and the current version.
 */
 async function isSerialBridgeExtensionInstalled(callback) {
-    try {
-        const port = await navigator.serial.requestPort();
-        console.log(port)
-        // Continue connecting to the device attached to port.
-    } catch (e) {
-        console.error(e)
-        // The prompt has been dismissed without selecting a device.
-    }
-
     chrome.runtime.sendMessage(chromeSerialExtensionId, { cmd: "installed" },
         function (response) {
             if (response) {
