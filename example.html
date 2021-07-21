@@ -64,13 +64,14 @@
     <button id="connect">Connect</button>
 
     <script>
+        const connectButton = document.getElementById("connect");
         connectButton.addEventListener('click', async () => {
-        try {
-            const port = await navigator.serial.requestPort();
-            console.log(port)
-        } catch (e) {
-            console.error(e)
-        }
+            try {
+                const port = await navigator.serial.requestPort();
+                console.log(port)
+            } catch (e) {
+                console.error(e)
+            }
         });
     </script>
 
