@@ -54,10 +54,10 @@
 
     <script>
         const connectButton = document.getElementById("connect");
-        connectButton.addEventListener('click', async () => {
+        connectButton.addEventListener('click', () => {
             window.postMessage({
                 type: "WALT3_CLIENT",
-                payload: 'requestInfo'
+                text: 'requestInfo'
             }, "*");
 
         /*
