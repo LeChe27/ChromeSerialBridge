@@ -6,16 +6,6 @@
 */
 var chromeSerialExtensionId = 'hgfifalikalcfmbphbkgdhbfollppfcn';
 
-document.addEventListener('DOMContentLoaded', async () => {
-    console.log('chromeSerialBridge.js DOMContentLoaded')
-    console.log(navigator.serial)
-
-    let ports = await navigator.serial.getPorts();
-    console.log(ports)
-
-    // TODO Populate the UI with options for the user to select or automatically connect to devices.
-});
-
 function SerialBridge() {
     this.isPortConnect = function(callback) {
         chrome.runtime.sendMessage(chromeSerialExtensionId, { cmd: "connected" },
@@ -30,7 +20,16 @@ function SerialBridge() {
 * Used to check if the Serial Bridge extension is installed on the browser.
 * If it's installed return result: "OK" and the current version.
 */
-function isSerialBridgeExtensionInstalled(callback) {
+async function isSerialBridgeExtensionInstalled(callback) {
+    try {
+        const port = await navigator.serial.requestPort();
+        console.log(port)
+        // Continue connecting to the device attached to port.
+    } catch (e) {
+        console.error(e)
+        // The prompt has been dismissed without selecting a device.
+    }
+
     chrome.runtime.sendMessage(chromeSerialExtensionId, { cmd: "installed" },
         function (response) {
             if (response) {
