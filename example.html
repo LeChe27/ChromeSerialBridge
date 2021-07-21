@@ -12,17 +12,6 @@
     -->
 
     <script>
-        connectButton.addEventListener('click', async () => {
-        try {
-            const port = await navigator.serial.requestPort();
-            console.log(port)
-        } catch (e) {
-            console.error(e)
-        }
-        });
-
-
-
         var serialBridge = null;
 
         async function checkSerialBridgePortIsConnect() {
@@ -73,6 +62,18 @@
     <button id="checkserialport" onclick="checkSerialBridgePortIsConnect()" disabled>Check Serial Bridge port is connected</button>
     <br>
     <button id="connect">Connect</button>
+
+    <script>
+        connectButton.addEventListener('click', async () => {
+        try {
+            const port = await navigator.serial.requestPort();
+            console.log(port)
+        } catch (e) {
+            console.error(e)
+        }
+        });
+    </script>
+
 </body>
 
 </html>
