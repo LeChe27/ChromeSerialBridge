@@ -55,11 +55,11 @@
     <script>
         const connectButton = document.getElementById("connect");
         connectButton.addEventListener('click', async () => {
-            chrome.tabs.getCurrent(tab => {
-                chrome.tabs.sendMessage(tab.id, 'getConfig', config => {
-                        console.log('chrome.tabs.sendMessage')
-                });
-            });
+            window.postMessage({
+                type: "WALT3_CLIENT",
+                payload: 'requestInfo'
+            }, "*");
+
         /*
             try {
                 const port = await navigator.serial.requestPort();
