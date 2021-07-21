@@ -6,6 +6,15 @@
 */
 var chromeSerialExtensionId = 'hgfifalikalcfmbphbkgdhbfollppfcn';
 
+document.addEventListener('DOMContentLoaded', async () => {
+    console.log('chromeSerialBridge.js DOMContentLoaded')
+    console.log(navigator.serial)
+
+    let ports = await navigator.serial.getPorts();
+    console.log(ports)
+
+    // TODO Populate the UI with options for the user to select or automatically connect to devices.
+});
 
 function SerialBridge() {
     this.isPortConnect = function(callback) {
