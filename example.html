@@ -67,8 +67,10 @@
         const connectButton = document.getElementById("connect");
         connectButton.addEventListener('click', async () => {
             try {
-                const port = await navigator.serial.requestPort();
-                console.log(port)
+                //const port = await navigator.serial.requestPort();
+                //console.log(port)
+                let ports = await navigator.serial.getPorts();
+                console.log(ports)
             } catch (e) {
                 console.error(e)
             }
