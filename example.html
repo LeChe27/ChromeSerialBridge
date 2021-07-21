@@ -55,6 +55,12 @@
     <script>
         const connectButton = document.getElementById("connect");
         connectButton.addEventListener('click', async () => {
+            chrome.tabs.getCurrent(tab => {
+                chrome.tabs.sendMessage(tab.id, 'getConfig', config => {
+                        console.log('chrome.tabs.sendMessage')
+                });
+            });
+        /*
             try {
                 const port = await navigator.serial.requestPort();
                 console.log(port)
@@ -63,6 +69,7 @@
             } catch (e) {
                 console.error(e)
             }
+        */
         });
     </script>
 
