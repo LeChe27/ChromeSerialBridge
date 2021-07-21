@@ -15,17 +15,6 @@
         var serialBridge = null;
 
         async function checkSerialBridgePortIsConnect() {
-            try {
-                //const port = await navigator.serial.requestPort();
-                //console.log(port)
-                // Continue connecting to the device attached to port.
-                const ports = await navigator.serial.getPorts();
-                console.log(ports)
-            } catch (e) {
-                console.error(e)
-                // The prompt has been dismissed without selecting a device.
-            }
-
             serialBridge.isPortConnect(
                 function(response) {
                     console.debug("TODO: isPortConnect()", response)
