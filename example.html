@@ -37,6 +37,7 @@
                         else {
                             serialBridge = new ChromeSerialBridgeFrame.contentWindow.SerialBridge;
                             document.getElementById("checkserialport").disabled = false;
+                            serialBridge.init()
                         }
                     }
                 );

@@ -11,11 +11,8 @@ async function connectMCU() {
 }
 
 
-var iframe = document.getElementById('ChromeSerialBridgeFrame');
 
-iframe.contentDocument.body.addEventListener("wallet-event", () => {
-    console.log('chromeSerailBridge Wallet Event')
-});
+
 
 /**
 * Extension unique id to start the comunication.
@@ -24,7 +21,14 @@ iframe.contentDocument.body.addEventListener("wallet-event", () => {
 var chromeSerialExtensionId = 'hgfifalikalcfmbphbkgdhbfollppfcn';
 
 function SerialBridge() {
-    this.isPortConnect = async function (callback) {
+    this.init = function () {
+        var iframe = document.getElementById('ChromeSerialBridgeFrame');
+        iframe.contentDocument.body.addEventListener("wallet-event", () => {
+            console.log('chromeSerailBridge Wallet Event')
+        });
+    }
+
+    this.isPortConnect = function (callback) {
         chrome.runtime.sendMessage(chromeSerialExtensionId, { cmd: "connected" },
             function (response) {
                 callback(response);
