@@ -12,7 +12,7 @@ async function connectMCU() {
 
 
 /*
-iframe.contentDocument.body.addEventListener('mouseup', Handler);
+addEventListener('mouseup', Handler);
 
 function Handler() {
     alert('works');
