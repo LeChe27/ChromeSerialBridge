@@ -21,6 +21,10 @@ var chromeSerialExtensionId = 'hgfifalikalcfmbphbkgdhbfollppfcn';
 function SerialBridge() {
     this.init = function () {
         // TODO
+        var iframe = document.getElementById('ChromeSerialBridgeFrame');
+        iframe.contentWindow.document.addEventListener("wallet-event", () => {
+            console.log('chromeSerailBridge Wallet Event')
+        });
     }
 
     this.isPortConnect = function (callback) {
