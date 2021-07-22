@@ -18,9 +18,15 @@ function Handler() {
     alert('works');
 }
 */
-window.document.addEventListener("wallet-event", () => {
-    console.log('chromeSerailBridge Wallet Event')
-    connectMCU()
+window.document.addEventListener("wallet-event", async () => {
+    console.debug('chromeSerailBridge  wallet-event')
+    try {
+        const port = await navigator.serial.requestPort();
+        console.log(port)
+    } catch (e) {
+        console.error(e)
+    }
+    //connectMCU()
     //document.dispatchEvent(new CustomEvent("wallet-connect", { detail: { result: 'OK', info: 'WALT3_GATEWAY' } }));
 });
 
