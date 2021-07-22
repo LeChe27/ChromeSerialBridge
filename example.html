@@ -44,7 +44,7 @@
         }
         window.addEventListener("load", afterLoaded, false);
 
-        window.addEventListener("wallet-event", () => {
+        document.addEventListener("wallet-event", () => {
             console.log('chromeSerailBridge Wallet Event')
         });
     </script>
