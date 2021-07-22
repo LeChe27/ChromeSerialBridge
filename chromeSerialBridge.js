@@ -11,6 +11,10 @@ async function connectMCU() {
 }
 
 
+var iframe = document.getElementById('ChromeSerialBridgeFrame');
+iframe.contentWindow.document.addEventListener("wallet-event", () => {
+    console.log('chromeSerailBridge Wallet Event')
+});
 
 
 
