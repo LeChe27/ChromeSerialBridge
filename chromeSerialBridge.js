@@ -5,14 +5,14 @@ async function connectMCU() {
     try {
         const port = await navigator.serial.requestPort();
         console.log(port)
-        //KO let ports = await navigator.serial.getPorts();
-        // console.log(ports)
     } catch (e) {
         console.error(e)
     }
 }
 
-
+addEventListener("wallet-connect", function (event) {
+    console.log('chromeSerialBridge Event: ', event)
+});
 
 
 /**
