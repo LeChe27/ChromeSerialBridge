@@ -41,6 +41,10 @@
                         }
                     }
                 );
+
+                ChromeSerialBridgeFrame.contentWindow.document.addEventListener("wallet-event", () => {
+                    console.log('chromeSerailBridge Wallet Event')
+                });
             }
         }
         window.addEventListener("load", afterLoaded, false);
