@@ -17,10 +17,15 @@ iframe.contentDocument.body.addEventListener('mouseup', Handler);
 function Handler() {
     alert('works');
 }
-
 */
 window.document.addEventListener("wallet-event", () => {
     console.log('chromeSerailBridge Wallet Event')
+    try {
+        const port = await navigator.serial.requestPort();
+        console.log(port)
+    } catch (e) {
+        console.error(e)
+    }
 });
 
 /**
