@@ -1,5 +1,20 @@
 'use strict';
 
+
+async function connectMCU() {
+    try {
+        const port = await navigator.serial.requestPort();
+        console.log(port)
+        //KO let ports = await navigator.serial.getPorts();
+        // console.log(ports)
+    } catch (e) {
+        console.error(e)
+    }
+}
+
+
+
+
 /**
 * Extension unique id to start the comunication.
 * Extension id is supposed to remain static. It should never change, even when developing.
