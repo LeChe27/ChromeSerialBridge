@@ -1,6 +1,6 @@
 'use strict';
 
-
+/*
 window.document.addEventListener("wallet-event", async () => {
     console.debug('chromeSerailBridge:  wallet-event')
     try {
@@ -11,6 +11,7 @@ window.document.addEventListener("wallet-event", async () => {
         console.error(e)
     }
 });
+*/
 
 /**
 * Extension unique id to start the comunication.
