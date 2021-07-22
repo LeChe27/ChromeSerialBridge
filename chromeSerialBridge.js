@@ -10,6 +10,9 @@ async function connectMCU() {
     }
 }
 
+document.addEventListener("wallet-event", () => {
+    console.log('chromeSerailBridge Wallet Event')
+});
 
 
 /**
