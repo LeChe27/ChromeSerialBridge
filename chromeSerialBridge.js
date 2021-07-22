@@ -10,12 +10,7 @@ async function connectMCU() {
     }
 }
 
-window.addEventListener("wallet-connect", function (event) {
-    console.log('chromeSerialBridge Event: ', event)
-});
-/*window.addEventListener("message", function (event) {
-    console.log('chromeSerialBridge Message: ', event)
-}, false);*/
+
 
 /**
 * Extension unique id to start the comunication.
