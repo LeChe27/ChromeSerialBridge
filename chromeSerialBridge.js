@@ -1,17 +1,5 @@
 'use strict';
 
-/*
-window.document.addEventListener("wallet-event", async () => {
-    console.debug('chromeSerailBridge:  wallet-event')
-    try {
-        const port = await navigator.serial.requestPort();
-        console.log(port)
-        document.dispatchEvent(new CustomEvent("wallet-connect", { detail: { result: 'OK', info: 'WALT3_GATEWAY' } }));
-    } catch (e) {
-        console.error(e)
-    }
-});
-*/
 
 /**
 * Extension unique id to start the comunication.
