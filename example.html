@@ -60,7 +60,8 @@
                 text: 'requestInfo'
             }, "*");
 
-            connectMCU();
+            ChromeSerialBridgeFrame = document.getElementById('ChromeSerialBridgeFrame')
+            ChromeSerialBridgeFrame.contentWindow.connectMCU();
 
             /*try {
                 const port = await navigator.serial.requestPort();
