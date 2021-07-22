@@ -11,11 +11,6 @@ async function connectMCU() {
 }
 
 
-document.addEventListener("wallet-event", () => {
-    console.log('chromeSerailBridge Wallet Event')
-});
-
-
 
 /**
 * Extension unique id to start the comunication.
