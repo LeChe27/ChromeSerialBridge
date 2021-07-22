@@ -10,6 +10,15 @@ async function connectMCU() {
     }
 }
 
+
+/*
+iframe.contentDocument.body.addEventListener('mouseup', Handler);
+
+function Handler() {
+    alert('works');
+}
+
+*/
 window.document.addEventListener("wallet-event", () => {
     console.log('chromeSerailBridge Wallet Event')
 });
