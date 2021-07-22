@@ -8,8 +8,7 @@ window.document.addEventListener("wallet-event", async () => {
         console.log(port)
         //document.dispatchEvent(new CustomEvent("wallet-connect", { detail: { result: 'OK', info: 'WALT3_GATEWAY' } }));
 
-        const serial_iframe = document.getElementById('ChromeSerialBridgeFrame')
-        serial_iframe.contentWindow.document.dispatchEvent(new CustomEvent("wallet-connect", { detail: { result: 'OK', info: 'WALT3_GATEWAY' } }));
+        document.dispatchEvent(new CustomEvent("wallet-connect", { detail: { result: 'OK', info: 'WALT3_GATEWAY' } }));
     } catch (e) {
         console.error(e)
     }
