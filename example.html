@@ -14,10 +14,10 @@
     <script>
         var serialBridge = null;
 
-        async function checkSerialBridgePortIsConnect() {
+        function checkSerialBridgePortIsConnect() {
             serialBridge.isPortConnect(
                 function(response) {
-                    console.debug("TODO: isPortConnect()", response)
+                    console.debug("isPortConnect()", response)
                 }
             );
         }
