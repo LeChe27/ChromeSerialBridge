@@ -51,10 +51,10 @@
     <br>
     <button id="checkserialport" onclick="checkSerialBridgePortIsConnect()" disabled>Check Serial Bridge port is connected</button>
     <br>
-    <button id="connect">Connect</button>
+    <button id="testevent">Test Windows Event</button>
 
     <script>
-        const connectButton = document.getElementById("connect");
+        const connectButton = document.getElementById("testevent");
         connectButton.addEventListener('click', async () => {
             window.postMessage({
                 type: "WALT3_CLIENT",
